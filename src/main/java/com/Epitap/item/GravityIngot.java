@@ -1,4 +1,4 @@
-package com.Epitap.items;
+package com.Epitap.item;
 
 import net.minecraft.world.item.Item;
 

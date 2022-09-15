@@ -1,6 +1,6 @@
 package com.Epitap.setup;
 
-import com.Epitap.items.SteelIngot;
+import com.Epitap.items.GravityIngot;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fmllegacy.RegistryObject;
@@ -14,5 +14,5 @@ public class Registration {
     public static void init(){
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());}
 
-    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",()-> new SteelIngot(new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("gravity_ingot",()-> new GravityIngot(new Item.Properties()));
 }

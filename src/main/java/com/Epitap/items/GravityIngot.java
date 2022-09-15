@@ -2,8 +2,8 @@ package com.Epitap.items;
 
 import net.minecraft.world.item.Item;
 
-public class SteelIngot extends Item {
-    public SteelIngot(Properties properties) {
+public class GravityIngot extends Item {
+    public GravityIngot(Properties properties) {
         super(properties);
     }
 }

@@ -12,8 +12,7 @@ public class Registration {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,MODID);
 
     public static void init(){
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-    }
+        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());}
 
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",()-> new SteelIngot(new Item.Properties()));
 }

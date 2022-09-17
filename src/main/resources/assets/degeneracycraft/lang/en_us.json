@@ -3,5 +3,8 @@
   "message.gravity_ingot": "Feel the gravity...",
 
   "item.degeneracycraft.gravitation_ore": "Gravitation Ore",
-  "message.gravitation_ore": "Is it Ore...?"
+  "message.gravitation_ore": "Is it Ore...?",
+
+  "block.degeneracycraft.thermal_power_generator": "Thermal Power Generator",
+  "message.thermal_power_generator": "Tier 1"
 }

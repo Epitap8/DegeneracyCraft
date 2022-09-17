@@ -1,4 +1,4 @@
-package com.Epitap.item;
+package com.Epitap.items;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

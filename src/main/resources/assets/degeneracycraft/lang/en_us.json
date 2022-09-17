@@ -1,5 +1,7 @@
 {
   "item.degeneracycraft.gravity_ingot": "Gravity Ingot",
+  "message.gravity_ingot": "Feel the gravity...",
 
-  "message.gravity_ingot": "Feel the gravity..."
+  "item.degeneracycraft.gravitation_ore": "Gravitation Ore",
+  "message.gravitation_ore": "Is it Ore...?"
 }

@@ -20,6 +20,12 @@ public class Items extends ItemModelProvider {
                  "layer0",
                 new ResourceLocation(DegeneracyCraft.MODID, "item/gravity_ingot"));
 
+        singleTexture(
+                Registration.GRAVITATION_ORE_ITEM.get().getRegistryName().getPath(),
+                new ResourceLocation("item/handheld"),
+                "layer0",
+                new ResourceLocation(DegeneracyCraft.MODID, "item/gravitation_ore"));
+
 
 
       //getBuilder(Registration.GRAVITY_INGOT.get().getRegistryName().getPath())

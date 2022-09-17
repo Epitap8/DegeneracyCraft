@@ -1,5 +1,6 @@
 {
   "item.degeneracycraft.gravity_ingot": "重力インゴット",
-
-  "message.gravity_ingot": "重力そのものを感じる…"
+  "message.gravity_ingot": "重力そのものを感じる…",
+  "item.degeneracycraft.gravitation_ore": "重力波鉱石",
+  "message.gravitation_ore": "これは鉱石…なのか？"
 }

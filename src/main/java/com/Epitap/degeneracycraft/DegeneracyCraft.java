@@ -1,5 +1,6 @@
 package com.Epitap.degeneracycraft;
 
+import com.Epitap.setup.ClientSetup;
 import com.Epitap.setup.Registration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,7 @@ public class DegeneracyCraft {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
+        bus.addListener(ClientSetup::setup);
         MinecraftForge.EVENT_BUS.register(this);
     }
 

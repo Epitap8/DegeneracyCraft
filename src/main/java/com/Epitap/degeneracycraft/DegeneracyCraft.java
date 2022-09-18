@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 public class DegeneracyCraft {
 
     public static final String MODID = "degeneracycraft";
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public DegeneracyCraft() {
         Registration.init();

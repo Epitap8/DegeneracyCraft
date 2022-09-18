@@ -25,7 +25,8 @@ public class Items extends ItemModelProvider {
                 new ResourceLocation("item/handheld"),
                 "layer0",
                 new ResourceLocation(DegeneracyCraft.MODID, "item/gravitation_ore"));
-
+        withExistingParent(Registration.THERMAL_POWER_GENERATOR.get().getRegistryName().getPath(),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator"));
 
 
       //getBuilder(Registration.GRAVITY_INGOT.get().getRegistryName().getPath())

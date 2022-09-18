@@ -23,14 +23,14 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        registerGeneratorBlock();
+        registerThermalPowerGeneratorBlock();
     }
-    private void registerGeneratorBlock() {
-        ResourceLocation txt = new ResourceLocation(DegeneracyCraft.MODID, "block/thermal_power_generator");
+    private void registerThermalPowerGeneratorBlock() {
+        ResourceLocation txt = new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side");
         BlockModelBuilder modelFirstblock = models().cube("thermal_power_generator",
-                txt, txt, new ResourceLocation(DegeneracyCraft.MODID, "block/thermal_power_generator_front"), txt, txt, txt);
-        BlockModelBuilder modelFirstblockPowered = models().cube("generator_powered",
-                txt, txt, new ResourceLocation(DegeneracyCraft.MODID, "block/thermal_power_generator_powered"), txt, txt, txt);
+                txt, txt, new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_front"), txt, txt, txt);
+        BlockModelBuilder modelFirstblockPowered = models().cube("thermal_power_generator_powered",
+                txt, txt, new ResourceLocation(DegeneracyCraft.MODID, "block/thermal_power_generator_front_powered"), txt, txt, txt);
         orientedBlock(Registration.THERMAL_POWER_GENERATOR.get(), state -> {
             if (state.getValue(BlockStateProperties.POWERED)) {
                 return modelFirstblockPowered;
@@ -39,15 +39,15 @@ public class BlockStates extends BlockStateProvider {
             }
         });
     }
-    private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc){
+    private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
         getVariantBuilder(block)
-                .forAllStates(state ->{
-                    Direction  dir = state.getValue(BlockStateProperties.FACING);
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(BlockStateProperties.FACING);
                     return ConfiguredModel.builder()
                             .modelFile(modelFunc.apply(state))
-                            .rotationX(dir.getAxis() == Direction.Axis.Y ? dir.getAxisDirection().getStep()*-90:0)
-                            .rotationY(dir.getAxis() == Direction.Axis.Y ? ((dir.get2DDataValue()*2)%4)*90:0)
+                            .rotationX(dir.getAxis() == Direction.Axis.Y ?  dir.getAxisDirection().getStep() * -90 : 0)
+                            .rotationY(dir.getAxis() != Direction.Axis.Y ? ((dir.get2DDataValue() + 2) % 4) * 90 : 0)
                             .build();
-                    });
+                });
     }
 }

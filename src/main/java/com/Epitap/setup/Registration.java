@@ -27,14 +27,14 @@ public class Registration {
     public static final RegistryObject<GravityIngot> GRAVITY_INGOT = ITEMS.register("gravity_ingot",
             ()-> new GravityIngot(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
-
-    public static final RegistryObject<ThermalPowerGenerator> THERMAL_POWER_GENERATOR = BLOCKS.register(
-            "thermal_power_generator",ThermalPowerGenerator::new);
-    public static final RegistryObject<Item> THERMAL_POWER_GENERATOR_ITEM = ITEMS.register
-            ("thermal_power_generator",
-            ()-> new BlockItem(THERMAL_POWER_GENERATOR.get(),new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<GravitationOre> GRAVITATION_ORE = BLOCKS.register("gravitation_ore",
             GravitationOre::new);
     public static final RegistryObject<Item> GRAVITATION_ORE_ITEM = ITEMS.register("gravitation_ore",
             ()-> new BlockItem(GRAVITATION_ORE.get(),new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<ThermalPowerGenerator> THERMAL_POWER_GENERATOR = BLOCKS.register(
+            "thermal_power_generator", ThermalPowerGenerator::new);
+
+    public static final RegistryObject<Item> THERMAL_POWER_GENERATOR_ITEM = ITEMS.register("thermal_power_generator",
+            ()-> new BlockItem(THERMAL_POWER_GENERATOR.get(),new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

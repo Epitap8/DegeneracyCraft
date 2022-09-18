@@ -7,7 +7,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,16 +25,16 @@ public class ThermalPowerGenerator extends Block {
                 .strength(3.0f));
     }
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> builder){
-        builder.add(BlockStateProperties.FACING,BlockStateProperties.POWERED);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(BlockStateProperties.FACING, BlockStateProperties.POWERED);
     }
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context){
-        return defaultBlockState().setValue(BlockStateProperties.FACING,context.getNearestLookingDirection()
-                .getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return defaultBlockState().setValue(BlockStateProperties.FACING, context.getNearestLookingDirection().getOpposite());
     }
+
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter reader, List<Component> list, TooltipFlag flags){

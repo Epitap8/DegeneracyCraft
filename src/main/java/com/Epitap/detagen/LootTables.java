@@ -28,12 +28,12 @@ import java.util.Map;
 
 public class LootTables extends LootTableProvider {
 
-    private final DataGenerator generator;
+    private final DataGenerator thermal_power_generator;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
     public LootTables(DataGenerator generator) {
         super(generator);
-        this.generator = generator;
+        this.thermal_power_generator = generator;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class LootTables extends LootTableProvider {
     }
 
     private void writeTables(HashCache cache, Map<ResourceLocation, LootTable> tables) {
-        Path outputFolder = this.generator.getOutputFolder();
+        Path outputFolder = this.thermal_power_generator.getOutputFolder();
         tables.forEach((key, lootTable) -> {
             Path path = outputFolder.resolve("data/" + key.getNamespace() + "/loot_tables/" + key.getPath() + ".json");
             try {

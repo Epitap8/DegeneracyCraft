@@ -4,6 +4,7 @@ import com.Epitap.degeneracycraft.DegeneracyCraft;
 import com.Epitap.setup.Registration;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -17,7 +18,7 @@ public class Items extends ItemModelProvider {
         singleTexture(
                 Registration.GRAVITY_INGOT.get().getRegistryName().getPath(),
                 new ResourceLocation("item/handheld"),
-                 "layer0",
+                "layer0",
                 new ResourceLocation(DegeneracyCraft.MODID, "item/gravity_ingot"));
 
         singleTexture(
@@ -25,14 +26,8 @@ public class Items extends ItemModelProvider {
                 new ResourceLocation("item/handheld"),
                 "layer0",
                 new ResourceLocation(DegeneracyCraft.MODID, "item/gravitation_ore"));
-        withExistingParent(Registration.THERMAL_POWER_GENERATOR.get().getRegistryName().getPath(),
-                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator"));
 
 
-      //getBuilder(Registration.GRAVITY_INGOT.get().getRegistryName().getPath())
-                //.parent(getExistingFile(mcLoc("item/generated")))
-               // .texture("layer0", "item/gravity_ingot");
+
     }
-
-
 }

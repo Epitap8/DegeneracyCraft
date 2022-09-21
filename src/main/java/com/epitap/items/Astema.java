@@ -36,7 +36,8 @@ public class Astema extends Item {
         if (level.isClientSide()){
             player.sendMessage(new TranslatableComponent("message.astema.charge",Integer.toString(charge)), Util.NIL_UUID);
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResultHolder
+                .success(stack);
     }
 
     @Override

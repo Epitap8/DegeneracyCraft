@@ -1,8 +1,11 @@
 {
   "item.degeneracycraft.gravity_ingot": "重力インゴット",
   "message.gravity_ingot": "重力そのものを感じる…",
-  "item.degeneracycraft.gravitation_ore": "重力波鉱石",
+  "block.degeneracycraft.gravitation_ore": "重力波鉱石",
   "message.gravitation_ore": "これは鉱石…なのか？",
   "block.degeneracycraft.thermal_power_generator": "火力発電機",
-  "message.thermal_power_generator": "Tier 1"
+  "message.thermal_power_generator": "Tier 1",
+  "item.degeneracycraft.astema": "アステマ",
+  "message.astema": "変形可能",
+  "message.astema.charge": "Stage 1 至近距離\nStage 2 中距離\nStage 3 遠距離"
 }

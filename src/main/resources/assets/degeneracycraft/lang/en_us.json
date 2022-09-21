@@ -1,10 +1,12 @@
 {
   "item.degeneracycraft.gravity_ingot": "Gravity Ingot",
   "message.gravity_ingot": "Feel the gravity...",
-
-  "item.degeneracycraft.gravitation_ore": "Gravitation Ore",
+  "block.degeneracycraft.gravitation_ore": "Gravitation Ore",
   "message.gravitation_ore": "Is it Ore...?",
-
   "block.degeneracycraft.thermal_power_generator": "Thermal Power Generator",
-  "message.thermal_power_generator": "Tier 1"
+  "message.thermal_power_generator": "Tier 1",
+  "item.degeneracycraft.astema": "Astema",
+  "message.astema": "Deformable",
+  "message.astema.charge": "Stage 1 Proximity Range\nStage 2 Middle Range\nStage 3 Long Range"
+
 }

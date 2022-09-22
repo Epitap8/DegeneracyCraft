@@ -7,6 +7,7 @@
   "message.thermal_power_generator": "Tier 1",
   "item.degeneracycraft.astema": "Astema",
   "message.astema": "Deformable",
-  "message.astema.charge": "Stage 1 Proximity Range\nStage 2 Middle Range\nStage 3 Long Range"
+  "message.astema.charge": "Stage 1 Proximity Range\nStage 2 Middle Range\nStage 3 Long Range",
+  "screen.degeneracycraft.thermal_power_generator": "ThermalPowerGenerator Control Screen"
 
 }

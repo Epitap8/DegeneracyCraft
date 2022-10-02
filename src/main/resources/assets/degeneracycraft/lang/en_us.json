@@ -4,10 +4,12 @@
   "block.degeneracycraft.gravitation_ore": "Gravitation Ore",
   "message.gravitation_ore": "Is it Ore...?",
   "block.degeneracycraft.thermal_power_generator": "Thermal Power Generator",
+  "block.degeneracycraft.solar_power_generator": "Solar Power Generator",
   "message.thermal_power_generator": "Tier 1",
+  "message.solar_power_generator": "Tier 2",
   "item.degeneracycraft.astema": "Astema",
   "message.astema": "Deformable",
   "message.astema.charge": "Stage 1 Proximity Range\nStage 2 Middle Range\nStage 3 Long Range",
-  "screen.degeneracycraft.thermal_power_generator": "ThermalPowerGenerator Control Screen"
-
+  "screen.degeneracycraft.thermal_power_generator": "ThermalPowerGenerator Control Screen",
+  "screen.degeneracycraft.solar_power_generator": "SolarPowerGenerator Screen"
 }

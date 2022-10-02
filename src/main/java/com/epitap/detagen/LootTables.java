@@ -48,7 +48,17 @@ public class LootTables extends LootTableProvider {
                 createStandardTable("gravitation_ore",
                         Registration.GRAVITATION_ORE.get()).setParamSet(LootContextParamSets.BLOCK).build());
         writeTables(cache, tables);
-    }
+
+        tables.put(Registration.SOLAR_POWER_GENERATOR.get().getLootTable(),
+                createStandardTable("solar_power_generator",
+                        Registration.SOLAR_POWER_GENERATOR.get()).setParamSet(LootContextParamSets.BLOCK).build());
+        writeTables(cache, tables);
+
+//        tables.put(Registration.KILO_WORK_BENCH.get().getLootTable(),
+//                createStandardTable("solar_power_generator",
+//                        Registration.KILO_WORK_BENCH.get()).setParamSet(LootContextParamSets.BLOCK).build());
+//        writeTables(cache, tables);
+   }
 
     protected LootTable.Builder createStandardTable(String name, Block block) {
         LootPool.Builder builder = LootPool.lootPool()

@@ -1,9 +1,6 @@
 package com.epitap.setup;
 
-import com.epitap.blocks.GravitationOre;
-import com.epitap.blocks.ThermalPowerGenerator;
-import com.epitap.blocks.ThermalPowerGeneratorBE;
-import com.epitap.blocks.ThermalPowerGeneratorContainer;
+import com.epitap.blocks.*;
 import com.epitap.items.Astema;
 import com.epitap.items.GravityIngot;
 import net.minecraft.core.BlockPos;
@@ -11,6 +8,7 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -28,12 +26,18 @@ public class Registration {
     private static final DeferredRegister<BlockEntityType<?>> BLOCKENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES,MODID);
     private static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS,MODID);
 
+    public static final DeferredRegister<RecipeSerializer<?>> RECIPE_TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MODID);
+
+
     public static void init(){
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(bus);
         BLOCKS.register(bus);
         BLOCKENTITIES.register(bus);
         CONTAINERS.register(bus);
+        RECIPE_TYPES.register(bus);
+
+
     }
 
 
@@ -62,5 +66,36 @@ public class Registration {
                 return new ThermalPowerGeneratorContainer(windowId,world,pos,inv,inv.player);
             }))
     );
+    public static final RegistryObject<SolarPowerGenerator> SOLAR_POWER_GENERATOR = BLOCKS.register(
+            "solar_power_generator", SolarPowerGenerator::new);
+
+    public static final RegistryObject<Item> SOLAR_POWER_GENERATOR_ITEM = ITEMS.register("solar_power_generator",
+            ()-> new BlockItem(SOLAR_POWER_GENERATOR.get(),new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockEntityType<SolarPowerGeneratorBE>> SOLAR_POWER_GENERATOR_BE = BLOCKENTITIES.register(
+            "solar_power_generator",()-> BlockEntityType.Builder.of(SolarPowerGeneratorBE::new,
+                    SOLAR_POWER_GENERATOR.get()).build(null));
+    public static final RegistryObject<MenuType<SolarPowerGeneratorContainer>> SOLAR_POWER_GENERATOR_CONTAINER =CONTAINERS.register(
+            "solar_power_generator",()-> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                Level world = inv.player.getCommandSenderWorld();
+                return new SolarPowerGeneratorContainer(windowId,world,pos,inv,inv.player);
+            }))
+    );
+    public static final RegistryObject<SolarPowerGenerator> KILO_WORK_BENCH = BLOCKS.register(
+            "kilo_work_bench", SolarPowerGenerator::new);
+
+    public static final RegistryObject<Item> KILO_WORK_BENCH_ITEM = ITEMS.register("kilo_work_bench",
+            ()-> new BlockItem(KILO_WORK_BENCH.get(),new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockEntityType<SolarPowerGeneratorBE>> KILO_WORK_BENCH_BE = BLOCKENTITIES.register(
+            "kilo_work_bench",()-> BlockEntityType.Builder.of(SolarPowerGeneratorBE::new,
+                    KILO_WORK_BENCH.get()).build(null));
+    public static final RegistryObject<MenuType<SolarPowerGeneratorContainer>> KILO_WORK_BENCH_CONTAINER =CONTAINERS.register(
+            "kilo_work_bench",()-> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                Level world = inv.player.getCommandSenderWorld();
+                return new SolarPowerGeneratorContainer(windowId,world,pos,inv,inv.player);
+            }))
+    );
+
 
 }

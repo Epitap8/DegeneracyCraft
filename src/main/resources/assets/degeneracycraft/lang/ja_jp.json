@@ -4,9 +4,12 @@
   "block.degeneracycraft.gravitation_ore": "重力波鉱石",
   "message.gravitation_ore": "これは鉱石…なのか？",
   "block.degeneracycraft.thermal_power_generator": "火力発電機",
+  "block.degeneracycraft.solar_power_generator": "太陽光発電機",
   "message.thermal_power_generator": "Tier 1",
+  "message.solar_power_generator": "Tier 2",
   "item.degeneracycraft.astema": "アステマ",
   "message.astema": "変形可能",
   "message.astema.charge": "Stage 1 至近距離\nStage 2 中距離\nStage 3 遠距離",
-  "screen.degeneracycraft.thermal_power_generator": "火力発電機 操作画面"
+  "screen.degeneracycraft.thermal_power_generator": "火力発電機 操作画面",
+  "screen.degeneracycraft.solar_power_generator": "太陽光発電機 画面"
 }

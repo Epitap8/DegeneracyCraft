@@ -23,27 +23,71 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        registerThermalPowerGeneratorBlock();
+        registerThermalPowerGenerator();
+        registerSolarPowerGenerator();
         registerGravitationOre();
+        //registerKiloWorkBench();
     }
     private void registerGravitationOre() {
         simpleBlock(Registration.GRAVITATION_ORE.get());
     }
-    private void registerThermalPowerGeneratorBlock() {
-        ResourceLocation txt = new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator");
+    private void registerThermalPowerGenerator() {
+        ResourceLocation txt = new ResourceLocation(DegeneracyCraft.MODID,"block/machine_frame_block_tier1");
         BlockModelBuilder modelthermal_power_generator = models().cube("thermal_power_generator",
-                txt, txt, new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_front"), txt, txt, txt);
-        BlockModelBuilder modelthermal_power_generatorPowered = models().cube("thermal_power_generator_powered",
-                txt, txt, new ResourceLocation(DegeneracyCraft.MODID, "block/thermal_power_generator_front_powered"), txt, txt, txt);
+                txt,txt,
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_front"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side"));
+        BlockModelBuilder modelthermal_power_generator_Powered = models().cube("thermal_power_generator_powered",
+                txt,txt,
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_front_powered"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/thermal_power_generator_side"));
         orientedBlock(Registration.THERMAL_POWER_GENERATOR.get(), state -> {
             if (state.getValue(BlockStateProperties.POWERED)) {
-                return modelthermal_power_generatorPowered;
+                return modelthermal_power_generator_Powered;
             } else {
                 return modelthermal_power_generator;
             }
         });
     }
 
+    private void registerSolarPowerGenerator(){
+        ResourceLocation txt = new ResourceLocation(DegeneracyCraft.MODID,"block/machine_frame_block_tier2");
+        BlockModelBuilder modelsolar_power_generator = models().cube("solar_power_generator",
+                txt,
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_up"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"));
+        BlockModelBuilder modelsolar_power_generator_Powered = models().cube("solar_power_generator_powered",
+                txt,
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_up"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side_powered"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side_powered"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side_powered"),
+                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side_powered"));
+        orientedBlock(Registration.SOLAR_POWER_GENERATOR.get(), state -> {
+            if (state.getValue(BlockStateProperties.POWERED)) {
+                return modelsolar_power_generator_Powered;
+            } else {
+                return modelsolar_power_generator;
+            }
+        });
+    }
+//    private void registerKiloWorkBench(){
+//        ResourceLocation txt = new ResourceLocation(DegeneracyCraft.MODID,"block/machine_frame_block_tier2");
+//        models().cube("kilo_work_bench",
+//                txt,
+//                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_up"),
+//                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"),
+//                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"),
+//                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"),
+//                new ResourceLocation(DegeneracyCraft.MODID,"block/solar_power_generator_side"));
+//    }
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
         getVariantBuilder(block)
                 .forAllStates(state -> {

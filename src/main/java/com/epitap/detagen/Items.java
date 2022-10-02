@@ -39,6 +39,19 @@ public class Items extends ItemModelProvider {
                 new ResourceLocation("item/handheld"));
         withExistingParent(Registration.GRAVITATION_ORE_ITEM.get().getRegistryName().getPath(),
                 new ResourceLocation(DegeneracyCraft.MODID, "block/gravitation_ore"));
+
+        singleTexture(
+                Registration.SOLAR_POWER_GENERATOR.get().getRegistryName().getPath(),
+                new ResourceLocation("item/handheld"));
+        withExistingParent(Registration.SOLAR_POWER_GENERATOR_ITEM.get().getRegistryName().getPath(),
+                new ResourceLocation(DegeneracyCraft.MODID, "block/solar_power_generator"));
+
+//        singleTexture(
+//                Registration.KILO_WORK_BENCH.get().getRegistryName().getPath(),
+//                new ResourceLocation("item/handheld"));
+//        withExistingParent(Registration.KILO_WORK_BENCH_ITEM.get().getRegistryName().getPath(),
+//                new ResourceLocation(DegeneracyCraft.MODID, "block/solar_power_generator"));
+
     }
 
     private void singleTexture(String path, ResourceLocation resourceLocation) {

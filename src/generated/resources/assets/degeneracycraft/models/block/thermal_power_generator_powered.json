@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/thermal_power_generator",
-    "up": "degeneracycraft:block/thermal_power_generator",
+    "down": "degeneracycraft:block/machine_frame_block_tier1",
+    "up": "degeneracycraft:block/machine_frame_block_tier1",
     "north": "degeneracycraft:block/thermal_power_generator_front_powered",
-    "south": "degeneracycraft:block/thermal_power_generator",
-    "east": "degeneracycraft:block/thermal_power_generator",
-    "west": "degeneracycraft:block/thermal_power_generator"
+    "south": "degeneracycraft:block/thermal_power_generator_side",
+    "east": "degeneracycraft:block/thermal_power_generator_side",
+    "west": "degeneracycraft:block/thermal_power_generator_side"
   }
 }

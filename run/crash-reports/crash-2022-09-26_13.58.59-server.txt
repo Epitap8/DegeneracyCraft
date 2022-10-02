@@ -1,0 +1,124 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 2022/09/26 13:58
+Description: Ticking block entity
+
+java.lang.NullPointerException: Cannot invoke "com.epitap.blocks.SolarPowerGeneratorBE.tickServer(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.Level, net.minecraft.core.BlockPos)" because "generator" is null
+	at com.epitap.blocks.SolarPowerGenerator.lambda$getTicker$0(SolarPowerGenerator.java:70) ~[%2379!:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:844) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:932) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading}
+	at net.minecraft.world.level.Level.tickBlockEntities(Level.java:475) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:391) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:883) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:819) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:85) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:684) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:831) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.epitap.blocks.SolarPowerGenerator.lambda$getTicker$0(SolarPowerGenerator.java:70) ~[%2379!:?] {re:classloading}
+-- Block entity being ticked --
+Details:
+	Name: degeneracycraft:solar_power_generator // com.epitap.blocks.SolarPowerGeneratorBE
+	Block: Block{degeneracycraft:solar_power_generator}[facing=south,powered=false]
+	Block location: World: (-157,4,-265), Section: (at 3,4,7 in -10,0,-17; chunk contains blocks -160,0,-272 to -145,255,-257), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Block: Block{degeneracycraft:solar_power_generator}[facing=south,powered=false]
+	Block location: World: (-157,4,-265), Section: (at 3,4,7 in -10,0,-17; chunk contains blocks -160,0,-272 to -145,255,-257), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+Stacktrace:
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:844) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:932) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading}
+	at net.minecraft.world.level.Level.tickBlockEntities(Level.java:475) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:391) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: 2025
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-160,4,-240), Section: (at 0,4,0 in -10,0,-15; chunk contains blocks -160,0,-240 to -145,255,-225), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 25442 game time, 8375 day time
+	Level name: 新規ワールド
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 145840 (now: false), thunder time: 87758 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:883) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:819) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:85) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:684) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.jar%2375!:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:831) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.17.1
+	Minecraft Version ID: 1.17.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 16.0.2, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 657965056 bytes (627 MiB) / 1268776960 bytes (1210 MiB) up to 2078277632 bytes (1982 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+	Identifier: Intel64 Family 6 Model 142 Stepping 11
+	Microarchitecture: whiskey Lake
+	Frequency (GHz): 1.99
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: Intel(R) UHD Graphics 620
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 1024.00
+	Graphics card #0 deviceId: 0x3ea0
+	Graphics card #0 versionInfo: DriverVersion=30.0.100.9864
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 2.40
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 2.40
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 32479.04
+	Virtual memory used (MB): 11913.51
+	Swap memory total (MB): 24553.99
+	Swap memory used (MB): 2128.61
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:forge, mod:degeneracycraft
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'
+	ModLauncher: 9.0.24+9.0.24+main.7be9f01d
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		 mixin PLUGINSERVICE 
+		 eventbus PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_token_subclass PLUGINSERVICE 
+		 capability_inject_definalize PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 mixin TRANSFORMATIONSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		javafml@null
+	Mod List: 
+		forge-1.17.1-37.1.1_mapped_official_1.17.1-recomp.|Minecraft                     |minecraft                     |1.17.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |37.1.1              |DONE      |Manifest: NOSIGNATURE
+		main                                              |Degeneracy Craft              |degeneracycraft               |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: f270f146-5521-4cdb-9f9e-2e821c5f15a7
+	FML: 37.1
+	Forge: net.minecraftforge:37.1.1

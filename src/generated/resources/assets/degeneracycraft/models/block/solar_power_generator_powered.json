@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine_frame_block_tier2",
+    "up": "degeneracycraft:block/solar_power_generator_up",
+    "north": "degeneracycraft:block/solar_power_generator_side_powered",
+    "south": "degeneracycraft:block/solar_power_generator_side_powered",
+    "east": "degeneracycraft:block/solar_power_generator_side_powered",
+    "west": "degeneracycraft:block/solar_power_generator_side_powered"
+  }
+}

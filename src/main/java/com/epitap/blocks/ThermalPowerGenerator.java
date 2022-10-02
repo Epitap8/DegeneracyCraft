@@ -54,7 +54,7 @@ public class ThermalPowerGenerator extends Block implements EntityBlock {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter reader, List<Component> list, TooltipFlag flags) {
-        list.add(new TranslatableComponent("message.thermal_power_generator").withStyle(ChatFormatting.RED));
+        list.add(new TranslatableComponent("message.thermal_power_generator").withStyle(ChatFormatting.WHITE));
     }
 
     @Nullable
